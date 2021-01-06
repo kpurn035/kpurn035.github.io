@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Solving Rubix's Cubes</title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <br />
+      <h1>Learn to Solve Rubik's Cubes</h1>
+    </header>
+    <br />
+    <nav>
+      <p>Navigation:</p>
+      <ul id="navigation">
+        <li><a href="#2x2">2x2</a></li>
+        <li><a href="#3x3">3x3</a></li>
+        <li><a href="#pyraminx">Pyraminx</a></li>
+      </ul>
+    </nav>
+    <br />
+    <aside>
+      <p>Difficultly Level (Hardest to Easiest):</p>
+      <ol id="difficulty">
+        <li>3x3</li>
+        <li>2x2</li>
+        <li>Pyraminx</li>
+      </ol>
+    </aside>
+    <br />
+    <article>
+      <div id="notation">
+      <h3>Notation:</h4>
+      <br />
+      <p>When solving Rubik's cubes, we use a special notation to show the move.</p>
+      <p>No Apostrophe= Clockwise Turn</p>
+      <p>Apostrophe (')= Counter-Clockwise Turn</p>
+      <p>2= Two Rotations</p>
+      <br />
+      <h4>2x2/3x3:</h4>
+      <p>F= Front | The front is what faces you when you are moving sides.</p>
+      <p>B= Back | The back is opposite to the front.</p>
+      <p>R= Right | The right side of the cube.</p>
+      <p>L= Left | The left is opposite to the right.</p>
+      <p>U= Up | The side facing up on the cube.</p>
+      <p>D= Down | The down face is opposite to the up.</p>
+      <p>Ex. L2' (2 counter-clockwise turns of the left face)</p>
+        <br />
+      <h4>Pyraminx:</h4>
+        <p>R= Right | Turn the smaller pyramid on the right</p>
+        <p>L= Left | Turn the smaller pyramid on the left.</p>
+        <p>U= Up | Turn the smaller pyramid on the top.</p>        </div>
+      <br />
+      <div id="2x2">
+        <h3>2x2:</h3>
+        <p>Main Algorithms:</p>
+        <ol id="2x2a">
+          <li>R B' R F2 R' B R F2 R2</li>
+          <li>R U2' R' U' R U' R'</li>
+          <li>R U R' U R U2 R'</li>
+        </ol>
+        <p>Steps:</p>
+        <ol id="2x2s">
+          <li>The first step to solving the 2x2 is to completely put together the white side. This is pretty easy and has a few simple algorithms to make it even easier. The first 2 tiles should be pretty easy to move up, but to move the last 2 tiles will be a little harder. Hold the cube so the 2 white sides are up, and a non-white space is in the bottom right corner. Move the corner you want to move up so it is in the bottom right corner on the front face. If the white side of the corner is face right, R' D' R. If the white is facing you, D' R' D R. If on the bottom, R' D2' R D' R' D' R.</li>
+          <li>Next, you need to solve the upper section of the R, F, L, and B faces. Simply put the newly put together white face on top, and repeat algorithm 1 until the upper half of the mentioned faces is solved.</li>
+          <li>Now, you need to solve the yellow side too. Turn the cube so that the newly solved white face is on the bottom, and there are now seven "cases" that need to be solved. Go to Cases to solve this step.</li>
+          <li>For the final step, you solve the final layer. Do algorithm 1 as many times as you need to solve it, but if there is a solid side, make it the front face and do algorithm 1. Just do U to complete the cube after doing algorithm 1 as many times as needed.</li>
+        </ol>
+        <p>Cases:</p>
+        <ol id="cases">
+          <li>If there is only one yellow tile on top, and if you put that tile in the bottom left corner on the top face, and on the front face there is a yellow tile in the upper right corner on the front face: Algorithm 3</li>
+          <li>If you do the same thing as case one, but there is no yellow tile in the upper right corner on the front face: U2 + Algorithm 2</li>
+          <li>If you hold the cube, and the upper half section of a face is filled, and the same thing on the opposite side, turn it so they make the F and B faces: Algorithm 2 + Algorithm 2</li>
+          <li>If you hold the cube, and on one side the upper section is filled, and that is the F face, and there on the R and L faces there is one yellow tile on each side: Algorithm 2 + U' + Algorithm 2</li>
+          <li>If on the U face there is a yellow tile in one corner, and another yellow tile opposite of that corner, rotate the U face until one of the yellow tiles is in the upper left corner, and facing you in the upper left corner is another yellow tile: Algorithm 2 + U2 + Algorithm 3</li>
+          <li>If one half section of the U face is yellow, make that half the bottom half of the U face, and if there are a yellow tile on the R and L faces: Algorithm 2 + U + Algorithm 3</li>
+          <li>If you do the same thing as case 6, but on the B face the upper section is yellow: U + Algorithm 2 + U' + Algorithm 3</li>
+        </ol>
+      </div>
+        <br />
+        <div id="3x3">
+          <h3>3x3:</h3>
+          <p>Parts:</p>
+          <p>Imagine this as the front of your cube:</p>
+          <table border="3" id="3x3p">
+            <tr>
+              <td>Corner</td>
+              <td>Edge</td>
+              <td>Corner</td>
+            </tr>
+            <tr>
+              <td>Edge</td>
+              <td>Center</td>
+              <td>Edge</td>
+            </tr>
+            <tr>
+              <td>Corner</td>
+              <td>Edge</td>
+              <td>Corner</td>
+            </tr>
+          </table>
+          <br />          
+          <p>Steps:</p>
+          <ol id="3x3s">
+            <li>The Yellow Daisy: The first step to solving a 3x3 with the beginners method is to create the yellow daisy. All you are doing on this step is putting all the white edges in position around the yellow center. Put the yellow center so it is the U face, and find and position all of the white edge pieces so they are around the yellow center. When you are finished, it will kind of look like a daisy. If there are some white corner pieces in position on the yellow side, don't worry because they will be fixed in a couple steps.</li>
+            <br />            
+            <li>The White Cross: This step is pretty easy, you are just moving the white centers on the yellow side to the white side, but also positioning the top edge pieces with the center pieces. Have any color center piece facing you (except for white and yellow, of course) and rotate the U face until the top edge piece is the same color, and on top of the center piece in front of you. After this, just do F2 to correctly position this. Repeat this step with all the center pieces with yellow on top, and white the bottom (again, do NOT do this step on white and yellow!).</li>
+            <br />
+            <li>Positioning the White Corner Pieces: For this step, you are going to want to put the white cross as the U face, and look for the three sided corner pieces on your cube that have white. For this step, you will be moving these white corner pieces so they are correctly positioned and match the center pieces. First, find any of the corner pieces that has white on it. It will be on the very top layer, or the very bottom layer. If it is in the top layer, make it so it is in the top right corner, then do R' D' R. This moves the corner out of the way and repositions the white edge. Now that it is, or already was in the bottom layer, you must look at the other two colors on that corner. Then, you must move it so <strong>it is in the corner that corresponds to the center piece colors. The colors on the edge piece do not have to be on the exact side that matches to the center piece.</strong> For instance, if I am positioning a corner piece that has blue, orange and white, I would move it so it is in the bottom right corner in-between the blue and orange faces. Now, you must see what direction the white on the corner piece is facing. If the white is facing towards you, do D' R' D R. If the white is facing to the right, do R' D' R, and for facing downwards, do R' D2' R D R' D' . Do whatever one of these steps you need all four corner pieces with white on them. When the white side is complete, along with the top layer, you may move on.</li>
+            <br />
+            <li>Finish the Middle Layer: For this step, you are finishing the middle layer by moving edge pieces into correct positions. There are only two algorithms to this step, but they are pretty long. To do this, you need to put the white side on the bottom, and rotate the U face to move the top edge piece. When looking for a piece to move, you need to look for the face that is missing middle edge pieces. For instance, if the edge piece on the green side is missing, on the right side, and on the orange side on the left the piece is missing, you would look for the green/orange edge piece. If it is already in that space, but incorrectly positioned, you need to remove it and re-insert it. To take it out if it is on the right side (on the F face) do U R U' R' U' F' U F. If on the left side, do U' L' U L F U' F'. If you did not need to do that step, you can use the same algorithms to insert them into the correct positions. Going back to the green and orange side example, with green in F and orange on R, you would position it between the two sides. For this, you do the right side action. Do this with all the sides besides for the white and yellow, until the middle layer is completely finished.</li>
+            <br />
+            <li>The Yellow Cross: This step involves only one algorithm, which is fairly short. You are still keeping the white side on the bottom, and the yellow side on top. If there is already a yellow cross on the U face, go to the next step. If not, do this step.The goal is to complete the yellow cross. There are three cases, the first being a line straight through the middle, the second is just the yellow center piece, and the third being an L shape on the face. Ignore all yellow corner pieces for this step. If you have case one, make it so it is horizontal, for the second case you can just leave it as it is, and for the third case, you need to make it so the L is backwards, in the upper left corner. Once you do this, do F U R U' R' F'. You may need to do this step a couple of times, but you know you are done with this step when there is a yellow cross on the U face.</li>
+            <br />
+            <li>Positioning the Yellow Corners: There is also only one algorithm for this step, but there are a few cases for this step. Case one is that there is one corner piece positioned, and the top face will kind of look like a fish. If you have this case, rotate the U face so that the 2x2 section of yellow is in the bottom left corner. For case two, there are no yellow corners. Find the face that has 2 yellow corners on it and make that the L face. For case three, there are two yellow corner pieces. Look at these visual examples to see how to position. (Imagine these as the top of the cube) After you have these in the position as explained above and below, do R U R' U R U2 R'. Do this step over again until the yellow face is solved.</li>
+            <br />
+            <li>Preparing for the Last Step: To finish this step, you just need to have all of the corner pieces in the correct positions so only the top edge pieces are out of alignment. If you do not already have this step complete, then try to find a side and match at least one corner piece, if not two. Then do R F R B2 R' F' R B2 R2 U. Sometimes you may need to rotate the U face a different number of times to finish the algorithm. Do this step until all of the corner pieces are correctly positioned.</li>
+            <br />
+            <li>Positioning the Final Edge Pieces: This is the final step to solving the cube, and you just need to put one side on the B face, and if there is an already completed side (besides for the yellow and white sides, which should still be on the U and D face), put that face on the B face. Do F2 U L R' F2 L' R U F2. Continue to do this step until the cube is solved.</li>
+          </ol>
+          <p>Step 6 Case 3 Position 1:</p>
+          <table border="3">
+            <tr>
+              <td>Not Yellow</td>
+              <td>Yellow</td>
+              <td>Yellow</td>
+            </tr>
+            <tr>
+              <td>Yellow</td>
+              <td>Yellow</td>
+              <td>Yellow</td>
+            </tr>
+            <tr>
+              <td>Not Yellow</td>
+              <td>Yellow</td>
+              <td>Yellow</td>
+            </tr>
+          </table>
+          <p>Step 6 Case 3 Position 2:</p>
+          <table border="3">
+            <tr>
+              <td>Yellow</td>
+              <td>Yellow</td>
+              <td>Not Yellow</td>
+            </tr>
+            <tr>
+              <td>Yellow</td>
+              <td>Yellow</td>
+              <td>Yellow</td>
+            </tr>
+            <tr>
+              <td>Not Yellow</td>
+              <td>Yellow</td>
+              <td>Yellow</td>
+            </tr>
+          </table>
+              <br />
+            <div id="pyraminx">
+              <h3>Pyraminx:</h3>
+              <p>Parts: Look at one of the faces of your Pyraminx, in each of the corners, there are pieces called tips. Do not confuse these with corners! The tips can rotate, but are not crucial to solving the pyramid. Each of the tips are touching one piece. Those pieces are called the center pieces. All the other pieces are called edges. The upper section of the pyramid is called the bigger tip, and is just U.</p>
+              <p>Main Algorithms</p>
+              <ol id="pyraminxa">
+                <li>U' R U R'</li>
+                <li>U L' U' L</li>
+                <li>R' L R L' U L' U' L</li>
+                <li>R' U' R U' R' U' R</li>
+                <li>R U R' U R U R'</li>
+              </ol>
+              <p>Steps:</p>
+              <ol id="pyraminxs">
+                <li>Fix the Tips: This step is extremely easy, just rotate the tips so they match the center pieces.</li>
+                <li>Orient the Centers: For this step, you are just matching the center pieces so that all the colors are on their proper sides. This step is also easy and has no algorithms.</li>
+                <li>Solve the Yellow and the Bottom Layer: Put the yellow face on the bottom, and find all of the yellow edge pieces. One at a time, find one of these, and look at the other color that is not yellow. For example, I am going to say the yellow and red edge. If I have this yellow and red edge, I need to move it so it is on the red side in front of me. Do not worry about the bigger tip going out of alignment. You will then have two options: Have the yellow on the left side of the middle layer, or the right side of the middle layer. You want to have it on the side so that the yellow is facing forward, and the other color off to the side. You need to rotate the bigger tip to position it. After that, you need to move it down to the bottom layer. If it is on the right side, do algorithm 1. If on the left side, do algorithm 2. Do this with all the edge pieces until the bottom layer and the yellow side is done. BUT, if there is a yellow edge on the bottom layer, you will need to move it out to do this. Just do algorithm 1 or 2 to move it out, and do the step as needed.</li>
+                <li>Finishing the Middle Layer: This is the last step, and there are 3 cases. Look below for the last step.</li>
+              </ol> 
+                <br />
+                <p>Cases:</p>
+                <ol id="pyraminxc">
+                  <li>2 edges need to be moved: For this case, make the two edges you want moved to the front, so you can see both out of alignment edges, and do algorithm 3.</li>
+                  <li>The edges need to be rotated clockwise: You will kind of have to guess for this step, but see what direction the edges need to go to be on the proper side. If it goes clockwise, do algorithm 4. If this does not bring you to only two edges need to be solved, do the algorithm again. This will either solve it, or bring you to case one. Do case one and the pyramid should be solved.</li>
+                  <li>The edges need to be rotated counter-clockwise: This is the same thing as case two, except that you replace algorithm 4 with algorithm 5.</li>
+                </ol>
+              </div>
+     </article>
+   </body>
+</html>
